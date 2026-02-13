@@ -1,405 +1,362 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PARABÉNS - EF WEB DESIGN</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232dd4bf'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-weight='900' font-size='34' fill='%23050505'%3EEF%3C/text%3E%3C/svg%3E" />
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind Config -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              display: ['Space Grotesk', 'sans-serif'],
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obrigado pela Compra - Próximos Passos</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons (Standalone) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+              950: '#052e16',
             },
-            colors: {
-              cyber: {
-                dark: '#050505',
-                panel: '#0a0a0a',
-                teal: '#2dd4bf',
-                tealDark: '#115e59',
-                glow: 'rgba(45, 212, 191, 0.15)'
-              }
-            },
-            animation: {
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'float': 'float 6s ease-in-out infinite',
-            },
-            keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
-              }
+            accent: {
+              cyan: '#06b6d4',
+              teal: '#14b8a6',
+            }
+          },
+          animation: {
+            'fade-in-down': 'fadeInDown 0.5s ease-out',
+          },
+          keyframes: {
+            fadeInDown: {
+              '0%': { opacity: '0', transform: 'translateY(-10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
             }
           }
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #050505;
+      color: #ffffff;
+    }
+
+    .glow-text {
+      text-shadow: 0 0 40px rgba(45, 212, 191, 0.3);
+    }
+
+    /* Selection color matches the theme */
+    ::selection {
+      background-color: #22c55e;
+      color: white;
+    }
+  </style>
+</head>
+
+<body
+  class="min-h-screen w-full flex flex-col bg-[#050505] text-white overflow-x-hidden font-sans selection:bg-brand-500 selection:text-white">
+
+  <!-- Fireworks Canvas -->
+  <canvas id="fireworks" class="fixed inset-0 pointer-events-none z-50"></canvas>
+
+  <!-- Main Content -->
+  <div class="relative min-h-screen flex flex-col items-center justify-center p-4 md:p-8 overflow-hidden">
+
+    <!-- Background Effects -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <!-- Subtle grid -->
+      <div
+        class="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]">
+      </div>
+
+      <!-- Top radial gradient glow -->
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-brand-500/10 rounded-full blur-[120px] opacity-40">
+      </div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center space-y-10">
+
+      <!-- 1. Payment Confirmed Badge -->
+      <div class="animate-fade-in-down">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-teal-500/30 bg-teal-500/10 shadow-[0_0_15px_rgba(20,184,166,0.3)]">
+          <div class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></div>
+          <span class="text-xs font-bold tracking-wider text-teal-400 uppercase">Pagamento Confirmado</span>
+        </div>
+      </div>
+
+      <!-- 2. Hero Headline -->
+      <div class="space-y-2">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
+          Parabéns pela <br />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-emerald-400 to-teal-300 glow-text">
+            Sua Decisão
+          </span>
+        </h1>
+      </div>
+
+      <!-- 3. Subheadline -->
+      <div class="max-w-2xl mx-auto">
+        <p class="text-gray-400 text-lg md:text-xl leading-relaxed">
+          Você acaba de dar um passo gigantesco. Ter um site profissional não é mais um diferencial, <span
+            class="text-gray-100 font-semibold">é a base do seu faturamento em 2026.</span>
+        </p>
+      </div>
+
+      <!-- 4. Attention Box -->
+      <div class="w-full max-w-2xl">
+        <div class="relative p-6 md:p-8 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-sm">
+          <div class="relative flex flex-col items-center gap-4 text-center">
+            <div class="flex items-center gap-2 text-teal-400 font-semibold">
+              <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+              <span>Atenção: Falta apenas 1 etapa para iniciarmos.</span>
+            </div>
+            <p class="text-gray-300 text-sm md:text-base">
+              Precisamos que você preencha o formulário de briefing para entendermos a identidade da sua empresa e
+              criarmos uma Landing Page 100% personalizada.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. CTA Button -->
+      <div class="pt-2 w-full flex justify-center">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSedUL85NxW-Ev9nF3N4nTNwe-LctjGHK7aCD0Q5kWt1pbNUXg/viewform"
+          class="inline-flex items-center justify-center gap-3 px-8 py-4 md:px-12 md:py-5 bg-gradient-to-r from-teal-600 to-emerald-600 text-white text-base md:text-lg font-bold rounded-full shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] transition-transform duration-300 border border-white/20 hover:scale-[1.15]">
+          <span class="tracking-wide">PREENCHER BRIEFING AGORA</span>
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+      </div>
+
+      <!-- 6. Features Grid -->
+      <div class="w-full pt-12 pb-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+
+          <!-- Feature 1 -->
+          <div class="flex flex-col items-center gap-4 p-4 rounded-xl transition-colors hover:bg-white/[0.02]">
+            <div
+              class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[#0f0f0f] border border-white/10 shadow-lg group">
+              <div
+                class="transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(45,212,191,0.5)]">
+                <i data-lucide="monitor" class="w-6 h-6 text-teal-400"></i>
+              </div>
+            </div>
+            <span class="text-xs font-bold tracking-widest text-gray-400">DESIGN PREMIUM</span>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="flex flex-col items-center gap-4 p-4 rounded-xl transition-colors hover:bg-white/[0.02]">
+            <div
+              class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[#0f0f0f] border border-white/10 shadow-lg group">
+              <div
+                class="transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(45,212,191,0.5)]">
+                <i data-lucide="zap" class="w-6 h-6 text-teal-400"></i>
+              </div>
+            </div>
+            <span class="text-xs font-bold tracking-widest text-gray-400">ALTA PERFORMANCE</span>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="flex flex-col items-center gap-4 p-4 rounded-xl transition-colors hover:bg-white/[0.02]">
+            <div
+              class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[#0f0f0f] border border-white/10 shadow-lg group">
+              <div
+                class="transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(45,212,191,0.5)]">
+                <i data-lucide="rocket" class="w-6 h-6 text-teal-400"></i>
+              </div>
+            </div>
+            <span class="text-xs font-bold tracking-widest text-gray-400">PRONTO P/ ESCALAR</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 7. Footer Socials -->
+      <div class="flex flex-col items-center gap-6 pt-8 border-t border-white/5 w-full max-w-xl">
+        <span class="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase">Compartilhe sua conquista</span>
+        <div class="flex items-center gap-4">
+
+          <a href="#"
+            class="flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 border border-white/10 text-gray-400 transition-all hover:bg-white/10 hover:text-white hover:border-white/20 hover:scale-110 active:scale-95">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </a>
+
+          <a href="#"
+            class="flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 border border-white/10 text-gray-400 transition-all hover:bg-white/10 hover:text-white hover:border-white/20 hover:scale-110 active:scale-95">
+            <i data-lucide="twitter" class="w-5 h-5"></i>
+          </a>
+
+          <a href="#"
+            class="flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 border border-white/10 text-gray-400 transition-all hover:bg-white/10 hover:text-white hover:border-white/20 hover:scale-110 active:scale-95">
+            <i data-lucide="facebook" class="w-5 h-5"></i>
+          </a>
+
+          <a href="#"
+            class="flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 border border-white/10 text-gray-400 transition-all hover:bg-white/10 hover:text-white hover:border-white/20 hover:scale-110 active:scale-95">
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- Fireworks Logic -->
+  <script>
+    (function () {
+      const canvas = document.getElementById('fireworks');
+      const ctx = canvas.getContext('2d');
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+
+      window.addEventListener('resize', () => {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+      });
+
+      class Particle {
+        constructor(x, y, color) {
+          this.x = x;
+          this.y = y;
+          this.color = color;
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 3 + 1;
+          this.vx = Math.cos(angle) * speed;
+          this.vy = Math.sin(angle) * speed;
+          this.life = 1;
+          this.decay = Math.random() * 0.02 + 0.015;
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          this.vy += 0.05; // gravity
+          this.life -= this.decay;
+        }
+        draw() {
+          ctx.save();
+          ctx.globalAlpha = this.life;
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
         }
       }
-    </script>
-    <style>
-      body {
-        background-color: #050505;
-        color: #ffffff;
+
+      class Rocket {
+        constructor() {
+          this.x = Math.random() * width * 0.8 + width * 0.1;
+          this.y = height;
+          this.vx = Math.random() * 2 - 1;
+          this.vy = -(Math.random() * 5 + 12);
+          this.color = `hsl(${Math.random() > 0.5 ? 160 : 130}, 80%, 60%)`; // Brand colors (teal/green)
+          this.exploded = false;
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          this.vy += 0.2; // gravity
+          if (this.vy >= -2) {
+            this.explode();
+          }
+        }
+        explode() {
+          this.exploded = true;
+          const pCount = 50; // Particle count
+          for (let i = 0; i < pCount; i++) {
+            particles.push(new Particle(this.x, this.y, this.color));
+          }
+        }
+        draw() {
+          ctx.fillStyle = this.color;
+          ctx.fillRect(this.x, this.y, 2, 8);
+        }
       }
-      .cyber-grid {
-        background-size: 40px 40px;
-        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                          linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+
+      const particles = [];
+      const rockets = [];
+      const startTime = Date.now();
+      const DURATION = 3000; // 3 seconds EXACTLY
+
+      function loop() {
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+        ctx.fillRect(0, 0, width, height);
+        ctx.globalCompositeOperation = 'source-over';
+
+        // Spawn rockets - Stop strictly after 3 seconds
+        if (Date.now() - startTime < DURATION) {
+          if (Math.random() < 0.15) {
+            rockets.push(new Rocket());
+          }
+        }
+
+        // Update Rockets
+        for (let i = rockets.length - 1; i >= 0; i--) {
+          rockets[i].update();
+          rockets[i].draw();
+          if (rockets[i].exploded) {
+            rockets.splice(i, 1);
+          }
+        }
+
+        // Update Particles
+        for (let i = particles.length - 1; i >= 0; i--) {
+          particles[i].update();
+          particles[i].draw();
+          if (particles[i].life <= 0) {
+            particles.splice(i, 1);
+          }
+        }
+
+        // Stop loop if done
+        if (Date.now() - startTime > DURATION + 2000 && rockets.length === 0 && particles.length === 0) {
+          ctx.clearRect(0, 0, width, height);
+          return;
+        }
+
+        requestAnimationFrame(loop);
       }
-    </style>
 
-    <!-- Import Map for Modules -->
-    <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@18.2.0",
-    "react-dom": "https://esm.sh/react-dom@18.2.0",
-    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-    "lucide-react": "https://esm.sh/lucide-react@0.263.1?external=react",
-    "canvas-confetti": "https://esm.sh/canvas-confetti@1.6.0",
-    "framer-motion": "https://esm.sh/framer-motion@10.12.16?external=react,react-dom",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/"
-  }
-}
-</script>
-    
-    <!-- Babel for JSX compilation in browser -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-</head>
-<body>
-    <div id="root"></div>
-
-    <script type="text/babel" data-type="module">
-        import React, { useEffect } from 'react';
-        import { createRoot } from 'react-dom/client';
-        import { motion, useAnimation } from 'framer-motion';
-        import { CheckCircle2, Zap, Monitor, Rocket, Twitter, Facebook, Linkedin, Instagram } from 'lucide-react';
-        import confetti from 'canvas-confetti';
-
-        // --- COMPONENTS START ---
-
-        // Custom WhatsApp Icon
-        const WhatsAppIcon = ({ className }) => (
-            <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                className={className}
-            >
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-        );
-
-        const ThankYouSection = () => {
-            const controls = useAnimation();
-
-            useEffect(() => {
-                // Trigger confetti on mount
-                const duration = 3 * 1000;
-                const animationEnd = Date.now() + duration;
-                const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-
-                const randomInRange = (min, max) => Math.random() * (max - min) + min;
-
-                const interval = setInterval(function() {
-                    const timeLeft = animationEnd - Date.now();
-
-                    if (timeLeft <= 0) {
-                        return clearInterval(interval);
-                    }
-
-                    const particleCount = 50 * (timeLeft / duration);
-                    
-                    // Since particles fall down, start a bit higher than random
-                    confetti({
-                        ...defaults, 
-                        particleCount,
-                        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-                        colors: ['#2dd4bf', '#ffffff', '#0d9488']
-                    });
-                    confetti({
-                        ...defaults, 
-                        particleCount,
-                        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-                        colors: ['#2dd4bf', '#ffffff', '#0d9488']
-                    });
-                }, 250);
-
-                controls.start("visible");
-
-                return () => clearInterval(interval);
-            }, [controls]);
-
-            const handleShare = (platform) => {
-                const url = window.location.href;
-                const text = "Acabei de investir no meu futuro digital! Confira:";
-                
-                let shareUrl = '';
-
-                switch (platform) {
-                case 'whatsapp':
-                    shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + url)}`;
-                    break;
-                case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
-                    break;
-                case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-                    break;
-                case 'linkedin':
-                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
-                    break;
-                case 'instagram':
-                    // Instagram doesn't have a direct web share link API for posts. 
-                    // We'll copy the link to clipboard as a fallback/helper.
-                    navigator.clipboard.writeText(url).then(() => {
-                        alert("Link copiado! Compartilhe no seu Instagram.");
-                    });
-                    return;
-                }
-
-                if (shareUrl) {
-                    window.open(shareUrl, '_blank', 'width=600,height=400');
-                }
-            };
-
-            // Animation variants
-            const containerVariants = {
-                hidden: { opacity: 0 },
-                visible: {
-                opacity: 1,
-                transition: {
-                    staggerChildren: 0.2,
-                    delayChildren: 0.3
-                }
-                }
-            };
-
-            const itemVariants = {
-                hidden: { opacity: 0, y: 30 },
-                visible: { 
-                opacity: 1, 
-                y: 0,
-                transition: {
-                    type: "spring",
-                    stiffness: 50,
-                    damping: 20
-                }
-                }
-            };
-
-            return (
-                <section className="relative min-h-screen flex items-center justify-center p-6 overflow-hidden">
-                
-                {/* Dynamic Background Layers */}
-                <div className="absolute inset-0 z-0">
-                    {/* Grid Texture */}
-                    <div className="absolute inset-0 cyber-grid opacity-20"></div>
-                    
-                    {/* Radial Vignette */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-cyber-dark via-transparent to-cyber-dark opacity-90"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyber-dark via-transparent to-cyber-dark opacity-90"></div>
-                    
-                    {/* Glowing Orbs */}
-                    <motion.div 
-                    className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyber-teal rounded-full blur-[150px] opacity-10"
-                    animate={{
-                        x: [0, 50, 0],
-                        y: [0, 30, 0],
-                        scale: [1, 1.2, 1]
-                    }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                    />
-                    <motion.div 
-                    className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-teal-600 rounded-full blur-[180px] opacity-10"
-                    animate={{
-                        x: [0, -40, 0],
-                        y: [0, -60, 0],
-                        scale: [1, 1.1, 1]
-                    }}
-                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                    />
-                </div>
-
-                {/* Floating UI Elements */}
-                <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                    <motion.div 
-                    initial={{ opacity: 0, rotate: -12, x: -100 }}
-                    animate={{ opacity: 0.05, x: 0 }}
-                    transition={{ duration: 1.5 }}
-                    className="absolute top-20 left-10 md:left-20 transform -rotate-12"
-                    >
-                    <div className="w-64 h-40 border border-cyber-teal/30 rounded-lg bg-cyber-panel/50 p-4">
-                        <div className="h-2 w-1/3 bg-cyber-teal/30 rounded mb-2"></div>
-                        <div className="h-2 w-full bg-white/10 rounded mb-2"></div>
-                        <div className="h-2 w-full bg-white/10 rounded mb-2"></div>
-                        <div className="h-2 w-2/3 bg-white/10 rounded"></div>
-                    </div>
-                    </motion.div>
-
-                    <motion.div 
-                    initial={{ opacity: 0, rotate: 12, x: 100 }}
-                    animate={{ opacity: 0.05, x: 0 }}
-                    transition={{ duration: 1.5, delay: 0.2 }}
-                    className="absolute bottom-40 right-10 md:right-20 transform rotate-12"
-                    >
-                    <div className="w-64 h-40 border border-cyber-teal/30 rounded-lg bg-cyber-panel/50 p-4 flex flex-col justify-end">
-                        <div className="flex gap-2 items-end h-20">
-                        <div className="w-4 h-full bg-cyber-teal/20 rounded-t"></div>
-                        <div className="w-4 h-2/3 bg-cyber-teal/40 rounded-t"></div>
-                        <div className="w-4 h-4/5 bg-cyber-teal/60 rounded-t"></div>
-                        <div className="w-4 h-full bg-cyber-teal/20 rounded-t"></div>
-                        </div>
-                    </div>
-                    </motion.div>
-                </div>
-
-                {/* Main Content Card */}
-                <motion.div 
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                    className="relative z-10 max-w-4xl w-full flex flex-col items-center text-center space-y-8"
-                >
-                    
-                    {/* Badge Pill */}
-                    <motion.div 
-                    variants={itemVariants}
-                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyber-teal/30 bg-cyber-teal/5 text-cyber-teal text-xs font-bold tracking-widest uppercase shadow-[0_0_20px_rgba(45,212,191,0.2)]"
-                    >
-                    <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyber-teal opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-cyber-teal"></span>
-                    </span>
-                    Pagamento Confirmado
-                    </motion.div>
-
-                    {/* Hero Headline */}
-                    <motion.div variants={itemVariants} className="space-y-2">
-                    <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white font-display leading-[1.1]">
-                        Parabéns pela <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyber-teal to-teal-200 drop-shadow-[0_0_15px_rgba(45,212,191,0.5)]">
-                        Sua Decisão
-                        </span>
-                    </h1>
-                    </motion.div>
-
-                    {/* Subheadline / Value Proposition */}
-                    <motion.div variants={itemVariants} className="max-w-2xl mx-auto relative">
-                    {/* Decorative glowing lines behind text */}
-                    <div className="absolute -top-4 -left-4 w-8 h-8 border-t-2 border-l-2 border-cyber-teal/30"></div>
-                    <div className="absolute -bottom-4 -right-4 w-8 h-8 border-b-2 border-r-2 border-cyber-teal/30"></div>
-                    
-                    <p className="text-lg md:text-xl text-gray-300 font-light leading-relaxed">
-                        Você acaba de dar um passo gigantesco. Ter um site profissional não é mais um diferencial, <strong className="text-white font-semibold">é a base do seu faturamento em 2026.</strong>
-                    </p>
-                    
-                    <p className="mt-4 text-gray-400">
-                        Nosso time já recebeu seu pedido e iniciará a construção da sua nova máquina de vendas.
-                    </p>
-                    </motion.div>
-
-                    {/* Visual Icons Row */}
-                    <motion.div 
-                    variants={itemVariants} 
-                    className="flex items-center justify-center gap-6 md:gap-12 py-4"
-                    >
-                    {[
-                        { icon: Monitor, label: "Design Premium" },
-                        { icon: Zap, label: "Alta Performance" },
-                        { icon: Rocket, label: "Pronto p/ Escalar" },
-                    ].map((item, index) => (
-                        <motion.div 
-                        key={index}
-                        whileHover={{ y: -5, color: '#2dd4bf' }}
-                        className="flex flex-col items-center gap-2 group cursor-default"
-                        >
-                        <div className="p-3 rounded-2xl bg-white/5 border border-white/10 group-hover:border-cyber-teal/50 group-hover:bg-cyber-teal/10 transition-all duration-300">
-                            <item.icon className="w-6 h-6 text-gray-400 group-hover:text-cyber-teal transition-colors" />
-                        </div>
-                        <span className="text-xs text-gray-500 font-medium uppercase tracking-wider group-hover:text-cyber-teal transition-colors">{item.label}</span>
-                        </motion.div>
-                    ))}
-                    </motion.div>
-
-                    {/* Divider */}
-                    <motion.div 
-                    variants={itemVariants} 
-                    className="h-px w-24 bg-gradient-to-r from-transparent via-cyber-teal/50 to-transparent"
-                    />
-
-                    {/* Social Share Buttons */}
-                    <motion.div 
-                    variants={itemVariants}
-                    className="flex flex-col items-center gap-4 pt-6"
-                    >
-                    <span className="text-[10px] text-gray-500 uppercase tracking-[0.2em] font-medium">Compartilhe sua conquista</span>
-                    <div className="flex items-center gap-4 flex-wrap justify-center">
-                        {[
-                            { icon: WhatsAppIcon, platform: 'whatsapp', label: 'WhatsApp' },
-                            { icon: Instagram, platform: 'instagram', label: 'Instagram' },
-                            { icon: Twitter, platform: 'twitter', label: 'Twitter' },
-                            { icon: Facebook, platform: 'facebook', label: 'Facebook' },
-                            { icon: Linkedin, platform: 'linkedin', label: 'LinkedIn' },
-                        ].map((social, index) => (
-                            <button 
-                            key={index}
-                            onClick={() => handleShare(social.platform)}
-                            title={`Compartilhar no ${social.label}`}
-                            className="group relative p-3 rounded-xl bg-white/5 border border-white/10 hover:border-cyber-teal/50 hover:bg-cyber-teal/10 hover:shadow-[0_0_15px_rgba(45,212,191,0.2)] transition-all duration-300 transform hover:-translate-y-1 hover:scale-110"
-                            >
-                                <social.icon className="w-5 h-5 text-gray-400 group-hover:text-cyber-teal transition-colors" />
-                            </button>
-                        ))}
-                    </div>
-                    </motion.div>
-
-                </motion.div>
-                
-                {/* Bottom overlay for depth */}
-                <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-cyber-dark to-transparent z-20 pointer-events-none"></div>
-
-                <style>{`
-                    @keyframes shimmer {
-                    100% {
-                        transform: translateX(100%);
-                    }
-                    }
-                `}</style>
-                </section>
-            );
-        };
-
-        const App = () => {
-            return (
-                <main className="min-h-screen w-full bg-cyber-dark text-white overflow-hidden relative selection:bg-cyber-teal selection:text-cyber-dark">
-                    <ThankYouSection />
-                </main>
-            );
-        };
-
-        const rootElement = document.getElementById('root');
-        const root = createRoot(rootElement);
-        root.render(<App />);
-
-    </script>
+      loop();
+    })();
+  </script>
 </body>
+
 </html>
